@@ -1,22 +1,30 @@
+/*
+ La mejor opción para manejar el peso en las comidas era la siguiente
+. método abstracto peso en Plato
+. const property peso en Provoleta
+. en esAbundante() usar self.peso()
+. En los test no hace falta pasarle el peso a las hamburguesas y a la parrillada
+ */
+
+/* En Provoleta Valoración() era un método no era un atributo y los metodos debían retornar el valor */
+
 class Plato {
-	var property peso = 0
+	method peso()
 	
-	var property valoracion = 0
+	method valoracion()
 	
-	method esAbundante() = peso > 250
+	method esAbundante() = self.peso() > 250
 	method aptoVegetariano()
 }
 
 class Provoleta inherits Plato {
 	var property tieneEspecias
-	
+	const property peso
 	override method aptoVegetariano() = not tieneEspecias
 	method esEspecial() = self.esAbundante() || tieneEspecias
-	override method valoracion(){
-		if(self.esEspecial()){
-			valoracion = 120
-		} else(valoracion =80)
-	}
+	override method valoracion() = 
+		if(self.esEspecial()) 120 else 80
+	
 }
 
 class HamburguesaDeCarne inherits Plato {

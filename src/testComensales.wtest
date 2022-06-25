@@ -3,14 +3,14 @@ import comensales.*
 describe "Test de Comensales" {
 	
 	const provoleta = new Provoleta(peso = 190, tieneEspecias = true)
-	const hamburguesaVegetariana = new HamburguesaVegetariana(peso = 250, pan = panDeMasaMadre, estaHechaDe = "garbanzos")
+	const hamburguesaVegetariana = new HamburguesaVegetariana( pan = panDeMasaMadre, estaHechaDe = "garbanzos")
 	
 	const asado = new Cortes(nombre = asado, peso = 250, calidad = 10)
 	const entrania = new Cortes(nombre = entrania, peso = 200, calidad = 7)
 	const chorizo = new Cortes(nombre = chorizo, peso = 50, calidad = 8)
 	
-	const hamburguesaDeCarne = new HamburguesaDeCarne( peso = 250, pan = panDeMasaMadre)
-	const hamburguesaDeCarneConPanCasero = new HamburguesaDeCarne( peso = 250, pan = panCasero)
+	const hamburguesaDeCarne = new HamburguesaDeCarne(  pan = panDeMasaMadre)
+	const hamburguesaDeCarneConPanCasero = new HamburguesaDeCarne(  pan = panCasero)
 	
 	
 	const vegetariano = new Vegetarianos(peso = 68000, comidasQueComio = [provoleta, hamburguesaVegetariana, hamburguesaVegetariana])
