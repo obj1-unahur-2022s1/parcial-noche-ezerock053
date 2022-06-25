@@ -1,3 +1,6 @@
+/*
+ * En el  ```estaSastifecho()``` de Vegetarianos y DePaladarFino te falto el super()  y además en la condicion especial de Vegetarianos, la negacion va en el dentro del closuere
+ */
 import comidas.*
 
 class Comensales {
@@ -13,7 +16,7 @@ class Comensales {
 class Vegetarianos inherits Comensales{
 	
 	override method leAgrada(unaComida) = unaComida.aptoVegetariano() == true && unaComida.valoracion() > 85
-	override method estaSastifecho() = ! comidasQueComio.all{ c => c.esAbundante()}
+	override method estaSastifecho() = super() and comidasQueComio.all{ c => not c.esAbundante()}
 }
 
 class HambrePopular inherits Comensales {
@@ -23,7 +26,7 @@ class HambrePopular inherits Comensales {
 class DePaladarFino inherits Comensales {
 	
 	override method leAgrada(unaComida) = unaComida.peso().between(150,300) && unaComida.valoracion() > 100
-	override method estaSastifecho() = comidasQueComio.size().even()
+	override method estaSastifecho() = super() and comidasQueComio.size().even()
 }
 
 
